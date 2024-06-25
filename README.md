@@ -20,7 +20,7 @@ This project is a Spring Boot-based microservices architecture application. The 
 ### Requirements
 
 - Java 17 or higher
-- Maven 3.6 or higher
+- Maven 3.9.6 or higher
 - Docker and Docker Compose
 
 ### Steps
