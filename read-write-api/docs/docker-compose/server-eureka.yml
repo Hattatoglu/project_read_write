@@ -1,0 +1,7 @@
+version: '3.1'
+
+services:
+  server-discovery:
+    image: server-discovery
+    ports:
+      - '8761:8761'

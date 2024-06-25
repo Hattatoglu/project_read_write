@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  server-gateway:
+    image: server-gateway
+    ports:
+      - '8600:8600'
+    environment:
+      - server.port=8600
+      - eureka.client.serviceUrl.defaultZone=http://<<eureka ip>>:8761/eureka/
+      - eureka.instance.prefer-ip-address=true
+      - eureka.instance.ip-address=<<gateway server ip>>
+      - eureka.instance.non-secure-port=8600
+      - eureka.instance.health-check-url-path=/actuator/info
+      - management.endpoints.web.exposure.include=health,info
+      - management.endpoint.health.show-details=always

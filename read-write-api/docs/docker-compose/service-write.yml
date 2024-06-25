@@ -1,0 +1,15 @@
+version: '3'
+services:
+  service-write:
+    image: service-write
+    ports:
+      - '8500:8500'
+    environment:
+      - server.port=8500
+      - eureka.client.serviceUrl.defaultZone=http://<<eureka-ip>>:8761/eureka/
+      - eureka.instance.prefer-ip-address=true
+      - eureka.instance.ip-address=<<service-write ip>>
+      - eureka.instance.non-secure-port=8500
+      - eureka.instance.health-check-url-path=/actuator/info
+      - management.endpoints.web.exposure.include=health,info
+      - management.endpoint.health.show-details=always
